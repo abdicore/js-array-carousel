@@ -33,15 +33,38 @@ Scriviamo sempre prima per punti il nostro algoritmo in italiano per capire cosa
  //reagisco al next
  nextButton.addEventListener('click', function(){
 
+
  //rivomov classe active
  images[currentActiveIndex].classList.remove('active')
 
  //incremento index
  currentActiveIndex++
 
+ //controllo se sono fuori arrey
+    if(currentActiveIndex === images.length){
+        currentActiveIndex = 0;
+    }
+
  //metter classe active a successiva
  images[currentActiveIndex].classList.add('active')
 
+})
 
+ //reagisco al prev
+ prevButton.addEventListener('click', function(){
+
+ //rivomov classe active
+ images[currentActiveIndex].classList.remove('active')
+   
+ //decremento index
+ currentActiveIndex--
+
+  //controllo se sono fuori arrey
+  if(currentActiveIndex < 0){
+    currentActiveIndex = images.length -1;
+}
+    
+ //metter classe active a sprecednte
+ images[currentActiveIndex].classList.add('active')
 
 })
