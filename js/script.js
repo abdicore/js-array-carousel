@@ -18,18 +18,32 @@ Scriviamo sempre prima per punti il nostro algoritmo in italiano per capire cosa
 */
 
 
- // FASE DI PREPARAZIONE
+// FASE DI PREPARAZIONE
  // recupero elementi dom
+
+ const surces = ['img/1.jpg', 'img/2.jpg', 'img/3.jpg', 'img/4.jpg', 'img/5.jpg',]
 
  const prevButton = document.getElementById('prev')
  const nextButton = document.getElementById('next')
+ const carouselGallery = document.querySelector('.gallery')
+
+ // creo le img 
+ for(let i = 0; i < surces.length; i++){
+    const src = surces[i];
+    const image = document.createElement('img');
+    image.src = src;
+    image.alt = 'landascpe-${i + 1 }';
+    carouselGallery.appendChild( image )
+ }
+
+
  const images = document.querySelectorAll('#carousel img')
 
  //rendo visibile l'immagine e creo index
  let currentActiveIndex = 0;
  images[currentActiveIndex].classList.add('active')
 
- //CREO EVENTI DINAMICI
+//CREO EVENTI DINAMICI
  //reagisco al next
  nextButton.addEventListener('click', function(){
 
@@ -48,7 +62,7 @@ Scriviamo sempre prima per punti il nostro algoritmo in italiano per capire cosa
  //metter classe active a successiva
  images[currentActiveIndex].classList.add('active')
 
-})
+ })
 
  //reagisco al prev
  prevButton.addEventListener('click', function(){
@@ -67,4 +81,4 @@ Scriviamo sempre prima per punti il nostro algoritmo in italiano per capire cosa
  //metter classe active a sprecednte
  images[currentActiveIndex].classList.add('active')
 
-})
+ })
