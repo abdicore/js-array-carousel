@@ -19,6 +19,7 @@
     height: 400px;
     width: 700px;
     margin: 30px auto;
+    position: relative;
 }
 
 #carousel .gallery {
@@ -38,3 +39,19 @@
     display: block;
 }
 
+#carousel i {
+    color: whitesmoke;
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+#prev {
+    left: 2%;
+}
+
+#next {
+    right: 2%;
+}
