@@ -1,0 +1,31 @@
+/* reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* utility */
+.container {
+    max-width: 1200px;
+    margin: o auto;
+}
+
+
+/* carosello */
+
+#carousel {
+    height: 400px;
+    width: 700px;
+    margin: 30px auto;
+}
+
+#carousel .gallery {
+    height: 100%;
+}
+
+#carousel img {
+    width: 100%;
+    height: 100%;
+}
