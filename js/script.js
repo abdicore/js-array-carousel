@@ -26,22 +26,34 @@ Scriviamo sempre prima per punti il nostro algoritmo in italiano per capire cosa
  const prevButton = document.getElementById('prev')
  const nextButton = document.getElementById('next')
  const carouselGallery = document.querySelector('.gallery')
+ const thumbGallery = document.getElementById('thumbnails')
 
- // creo le img 
+ // creo le img per carosello 
  for(let i = 0; i < surces.length; i++){
     const src = surces[i];
     const image = document.createElement('img');
     image.src = src;
     image.alt = 'landascpe-${i + 1 }';
     carouselGallery.appendChild( image )
+
+ // Creazione dell'immagine per la miniatura
+ const thumbnail = document.createElement('img');
+ thumbnail.src = src;
+ thumbnail.alt = `thumbnail-${i + 1}`;
+ thumbGallery.appendChild(thumbnail);
+
+
  }
 
+ //seleziono tutte le img per carosello e thumbnails
+ const images = document.querySelectorAll('#carousel img');
+ const thumbnails = document.querySelectorAll('#thumbnails img');
 
- const images = document.querySelectorAll('#carousel img')
-
- //rendo visibile l'immagine e creo index
+ //rendo visibile l'immagine per carosello e thumb creo index
  let currentActiveIndex = 0;
  images[currentActiveIndex].classList.add('active')
+ thumbnails[currentActiveIndex].classList.add('active');
+
 
 //CREO EVENTI DINAMICI
  //reagisco al next
@@ -50,6 +62,10 @@ Scriviamo sempre prima per punti il nostro algoritmo in italiano per capire cosa
 
  //rivomov classe active
  images[currentActiveIndex].classList.remove('active')
+ thumbnails[currentActiveIndex].classList.remove('active')
+
+
+
 
  //incremento index
  currentActiveIndex++
@@ -61,6 +77,8 @@ Scriviamo sempre prima per punti il nostro algoritmo in italiano per capire cosa
 
  //metter classe active a successiva
  images[currentActiveIndex].classList.add('active')
+ thumbnails[currentActiveIndex].classList.add('active')
+
 
  })
 
@@ -69,6 +87,9 @@ Scriviamo sempre prima per punti il nostro algoritmo in italiano per capire cosa
 
  //rivomov classe active
  images[currentActiveIndex].classList.remove('active')
+ thumbnails[currentActiveIndex].classList.remove('active')
+
+
    
  //decremento index
  currentActiveIndex--
@@ -80,5 +101,8 @@ Scriviamo sempre prima per punti il nostro algoritmo in italiano per capire cosa
     
  //metter classe active a sprecednte
  images[currentActiveIndex].classList.add('active')
+ thumbnails[currentActiveIndex].classList.add('active')
+
+    
 
  })
