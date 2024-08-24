@@ -103,6 +103,22 @@ Scriviamo sempre prima per punti il nostro algoritmo in italiano per capire cosa
  images[currentActiveIndex].classList.add('active')
  thumbnails[currentActiveIndex].classList.add('active')
 
-    
-
  })
+
+ for (let i = 0; i <thumbnails.length; i++)  {
+   const thumbnail = thumbnails[i]
+   thumbnail.addEventListener('click', function(){
+
+   // togliamo la classe active
+   images[currentActiveIndex].classList.remove('active')
+   thumbnails[currentActiveIndex].classList.remove('active')
+
+   //assegno index a img selezionata
+   currentActiveIndex = i
+
+  //metter classe active a selezionata
+  images[currentActiveIndex].classList.add('active')
+  thumbnails[currentActiveIndex].classList.add('active')
+
+})
+}
